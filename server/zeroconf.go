@@ -16,7 +16,7 @@ func RegisterService() {
 		"_ollama._tcp",   // Service Type
 		"local.",         // Domain
 		11434,            // Port
-		nil, // TXT Records
+		[]string{"path=./"}, // TXT Records
 		nil, // Host
 	)
 	if err != nil {
