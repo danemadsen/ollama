@@ -12,7 +12,6 @@ import (
 	"github.com/ollama/ollama/app/store"
 	"github.com/ollama/ollama/app/tray"
 	"github.com/ollama/ollama/envconfig"
-	"github.com/ollama/ollama/server/zeroconf"
 )
 
 func Run() {
@@ -83,8 +82,6 @@ func Run() {
 		}
 	}
 
-	zeroconf.RegisterService()
-
 	StartBackgroundUpdaterChecker(ctx, t.UpdateAvailable)
 
 	t.Run()
@@ -93,6 +90,5 @@ func Run() {
 	if done != nil {
 		<-done
 	}
-	zeroconf.UnregisterService()
 	slog.Info("Ollama app exiting")
 }
