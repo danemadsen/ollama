@@ -2,8 +2,6 @@ package server
 
 import (
 	"log"
-	"net"
-	"time"
 
 	"github.com/grandcat/zeroconf"
 )
