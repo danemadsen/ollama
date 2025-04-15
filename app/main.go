@@ -5,11 +5,8 @@ package main
 
 import (
 	"github.com/ollama/ollama/app/lifecycle"
-	"github.com/ollama/ollama/server/zeroconf"
 )
 
 func main() {
-	zeroconf.RegisterService()
 	lifecycle.Run()
-	zeroconf.UnregisterService()
 }
